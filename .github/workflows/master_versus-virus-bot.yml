@@ -33,5 +33,5 @@ jobs:
       with:
         app-name: 'versus-virus-bot'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a3720643a91d45b38e762f487fb18501 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_aafa9f9e0ebd4adb89ee45c7409a0249 }}
         package: './myapp.zip'
