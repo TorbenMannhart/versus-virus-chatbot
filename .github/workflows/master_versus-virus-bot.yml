@@ -25,8 +25,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Zip the application files
-      run: zip -r myapp.zip .
+    #- name: Zip the application files
+     # run: zip -r myapp.zip .
 
 
     - name: 'Deploy to Azure Web App'
