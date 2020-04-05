@@ -1,11 +1,11 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-from azure.cognitiveservices.language.luis.runtime.models import LuisResult
+# from azure.cognitiveservices.language.luis.runtime.models import LuisResult
 
 from botbuilder.ai.luis import LuisApplication, LuisRecognizer, LuisPredictionOptions
 # from botbuilder.ai.qna import QnAMaker, QnAMakerEndpoint
-from botbuilder.core import ActivityHandler, TurnContext, RecognizerResult, MessageFactory
+from botbuilder.core import ActivityHandler, TurnContext, MessageFactory
 from botbuilder.schema import ChannelAccount, SuggestedActions, CardAction, ActionTypes
 from config import DefaultConfig
 import pandas as pd
@@ -14,7 +14,7 @@ import pandas as pd
 class DispatchBot(ActivityHandler):
     def __init__(self, config: DefaultConfig):
 
-        self.response_dict = pd.read_excel('../Backend/intents.xlsx').set_index(['intent']).T.to_dict('list')
+        self.response_dict = pd.read_excel('intents.xlsx').set_index(['intent']).T.to_dict('list')
         self.state = 0
         self.loop_flag = False
         luis_application = LuisApplication(
